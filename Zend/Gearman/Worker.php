@@ -163,20 +163,6 @@ class Zend_Gearman_Worker
     }
 
     /**
-     * Checks for a Memory Overflow from our Limit
-     *
-     * @return bool
-     */
-    protected function isMemoryOverflow()
-    {
-        $mem = memory_get_usage();
-        if ($mem > ($this->_memory * 1024 * 1024)) {
-            return true;
-        }
-        return false;
-    }
-
-    /**
      * Set Error Message
      *
      * @param string $error
