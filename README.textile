@@ -1,0 +1,51 @@
+h1. Zend_Gearman
+
+This project allows for leveraging gearman workers much like a controller in Zend Framework.  Included in the source code is a quick start that should help you get going quickly.
+
+h2. Quick Example of a Zend_Gearman_Worker
+
+This code belongs in application/workers and named DemoWorker.php with the class name being DemoWorker.
+
+Sorry about the formatting, textile in GitHub really does not like whitespace in the pre-code blocks.
+
+<pre><code>
+    class DemoWorker extends Zend_Gearman_Worker
+    {
+        protected $_registerFunction = 'demowork';
+        protected $_timeout = 10000; // 10 seconds
+        protected $_memory = 10; // 10 MB
+        protected function init()
+        {
+            // if you were to bootstrap something...
+            // you would use:
+            // $this->_bootstrap->bootstrap('name');
+            // if you are going to utilize a class for each
+            // worker, you would initialize it here as well.
+        }
+        protected function timeout()
+        {
+            // this function will be called whenever the
+            // timeout limit has been reached.  this means
+            // that there has been no jobs worked on for this
+            // particular amount of time.  this is extremely
+            // useful for database connections that do not
+            // automatically restart.
+        }
+        protected function shutdown()
+        {
+            // if you have any open connections
+            // these should be closed down here.
+            // otherwise you can also destruct any
+            // other objects you might have.
+        }
+        protected function _work()
+        {
+            $workload = $this->getWorkload();
+            echo 'The workload is: ' . $workload;
+        }
+    }
+</code></pre>
+
+h2. Further Reading
+
+Checkout my blog on "Integrating Zend Framework with Gearman":http://blog.digitalstruct.com/2010/10/17/integrating-gearman-into-zend-framework/
