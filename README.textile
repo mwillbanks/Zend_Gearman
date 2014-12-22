@@ -1,15 +1,15 @@
-h1. Zend_Gearman
+h1. Gearman
 
 This project allows for leveraging gearman workers much like a controller in Zend Framework.  Included in the source code is a quick start that should help you get going quickly.
 
-h2. Quick Example of a Zend_Gearman_Worker
+h2. Quick Example of a Gearman_Worker
 
 This code belongs in application/workers and named DemoWorker.php with the class name being DemoWorker.
 
 Sorry about the formatting, textile in GitHub really does not like whitespace in the pre-code blocks.
 
 <pre><code>
-    class DemoWorker extends Zend_Gearman_Worker
+    class DemoWorker extends Gearman_Worker
     {
         protected $_registerFunction = 'demowork';
         protected $_timeout = 10000; // 10 seconds

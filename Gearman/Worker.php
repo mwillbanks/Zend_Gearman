@@ -13,8 +13,8 @@
  * to license@zend.com so we can send you a copy immediately.
  *
  * @category   Zend
- * @package    Zend_Gearman
- * @subpackage Zend_Gearman_Worker
+ * @package    Gearman
+ * @subpackage Gearman_Worker
  * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @version    $Id$
@@ -24,13 +24,12 @@
  * Gearman Worker
  * Implementation for handling Gearman Work
  *
- * @category   Zend
- * @package    Zend_Gearman
- * @subpackage Zend_Gearman_Worker
+ * @package    Gearman
+ * @subpackage Gearman_Worker
  * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Zend_Gearman_Worker
+class Gearman_Worker
 {
     /**
      * Register Function
@@ -74,7 +73,7 @@ class Zend_Gearman_Worker
      * fetches the bootstrap and loads in the gearman worker
      *
      * @param Zend_Application_Bootstrap_BootstrapAbstract $bootstrap
-     * @return Zend_Gearman_Worker
+     * @return Gearman_Worker
      */
     public function __construct(Zend_Application_Bootstrap_BootstrapAbstract $bootstrap)
     {
